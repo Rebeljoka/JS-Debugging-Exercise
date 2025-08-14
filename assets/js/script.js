@@ -36,31 +36,28 @@ function buttonClicked() {
         messageElement.style.fontWeight = 'bold';
         checkButton.textContent = 'Replay';
         messageElement.style.color = 'green';
-
-        //Check if input value is > random number and within 1-99 range.
     } else if (inputValue > randomNumber && inputValue < 100) {
+        //Check if input value is > random number and within 1-99 range.
         // Update the guess text and remaining chances
         messageElement.textContent = 'Your guess is high';
         remainingGuesses.textContent = guessesLeft;
         messageElement.style.color = '#333';
-
-        //Check if input value is < random number and within 1-99 range.
     } else if (inputValue < randomNumber && inputValue > 0) {
+        //Check if input value is < random number and within 1-99 range.
         // Update the guessed number text and remaining chances
-        messageElement.textContext = 'Your guess is low';
+        messageElement.textContent = 'Your guess is low';
         remainingGuesses.textContent = guessesLeft;
         messageElement.style.color = '#333';
-
-        // If the input value is not within the range of 1 to 99
     } else {
+        // If the input value is not within the range of 1 to 99
         // Update the guessed number text, color and remaining chances
         messageElement.textContent = 'Your number is invalid';
         remainingGuesses.textContent = guessesLeft;
         messageElement.style.color = '#DE0611';
     }
 
-    // Check if the chance is zero
-    if (guesses == 0) {
+    if (guessesLeft == 0) {
+        // Check if the chance is zero
         //Update check button, disable input, and clear input value.
         // Update guessed number text and color to indicate user loss.
         checkButton.textContent = "Replay";
