@@ -36,13 +36,13 @@ function btnClicked() {
         messageElement.style.fontWeight = 'bold';
         checkButton.textContent = 'Replay';
         messageElement.style.color = 'green';
-    } else if (inputValue > randomNumber && inputValue < 100) {
+    } else if (inputValue > randomNumber && inputValue < 100 && Number.isInteger(Number(inputValue))) {
         // Check if input value is > random number and within 1-99 range.
         // Update the guess text and remaining chances
         messageElement.textContent = 'Your guess is high';
         remainingGuesses.textContent = guessesLeft;
         messageElement.style.color = '#333';
-    } else if (inputValue < randomNumber && inputValue > 0) {
+    } else if (inputValue < randomNumber && inputValue > 0 && Number.isInteger(Number(inputValue))) {
         //Check if input value is < random number and within 1-99 range.
         // Update the guessed number text and remaining chances
         messageElement.textContent = 'Your guess is low';
