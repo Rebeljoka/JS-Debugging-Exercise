@@ -33,7 +33,7 @@ function btnClicked() {
     guessesLeft--;
 
     // Get the value from the input field
-    let inputValue = inputElement.value;
+    let inputValue = Number(inputElement.value);
 
     // Check if the input value is equal to the random number
     if (inputValue == randomNumber) {
