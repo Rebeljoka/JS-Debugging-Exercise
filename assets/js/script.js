@@ -29,7 +29,7 @@ function btnClicked() {
     let inputValue = inputElement.value;
 
     // Check if the input value is equal to the random number
-    if (inputValue = randomNumber) {
+    if (inputValue == randomNumber) {
         // Update guessed number, disable input, check button text and color.
         messageElement.textContent = `Congratulations - ${inputValue} is correct!`;
         inputElement.disabled = true;
