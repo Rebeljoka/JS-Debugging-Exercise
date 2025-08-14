@@ -17,13 +17,13 @@ let guessesLeft = 10;
 checkButton.addEventListener('click', btnClicked);
 
 // process the button clicked event
-function buttonClicked() {
+function btnClicked() {
     // if replay reload page
     if (checkButton.textContent === 'Replay') {
         window.location.reload();
     }
     // Decrement the chance variable on every click
-    guessesLeft++;
+    guessesLeft--;
 
     // Get the value from the input field
     let inputValue = inputElement.value;
@@ -37,7 +37,7 @@ function buttonClicked() {
         checkButton.textContent = 'Replay';
         messageElement.style.color = 'green';
     } else if (inputValue > randomNumber && inputValue < 100) {
-        //Check if input value is > random number and within 1-99 range.
+        // Check if input value is > random number and within 1-99 range.
         // Update the guess text and remaining chances
         messageElement.textContent = 'Your guess is high';
         remainingGuesses.textContent = guessesLeft;
