@@ -16,6 +16,13 @@ let guessesLeft = 10;
 // Listen for the click event on the check button
 checkButton.addEventListener('click', btnClicked);
 
+// Allows Enter to submit
+inputElement.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        btnClicked();
+    }
+});
+
 // process the button clicked event
 function btnClicked() {
     // if replay reload page
@@ -52,7 +59,7 @@ function btnClicked() {
         // If the input value is not within the range of 1 to 99
         // Update the guessed number text, color and remaining chances
         messageElement.textContent = 'Your number is invalid';
-        remainingGuesses.textContent = guessesLeft;
+        //remainingGuesses.textContent = guessesLeft;
         messageElement.style.color = '#DE0611';
     }
 
